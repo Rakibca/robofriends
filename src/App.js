@@ -12,11 +12,15 @@ class App extends Component {
     };
   }
 
+  onSearchChange(event) {
+    console.log(event.target.value);
+  }
+
   render() {
     return (
       <div className="tc">
         <h1>RoboFriends</h1>
-        <SearchBox />
+        <SearchBox searchChange={this.onSearchChange} />
         <CardList robots={this.state.robots} />
       </div>
     );
